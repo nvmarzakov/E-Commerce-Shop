@@ -66,6 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # for every page that we view, we have access to that view the categories view
+                'e_commerce_shop.store.views.categories',
             ],
         },
     },
