@@ -1,8 +1,8 @@
-# store urls.py
+# products_app urls.py
 from django.urls import path
 from . import views
 
-app_name = 'store'
+app_name = 'products_app'
 
 urlpatterns = (
     path('', views.AllProductsListView.as_view(), name='all_products'),

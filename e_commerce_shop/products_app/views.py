@@ -1,5 +1,5 @@
-# store/views.py
-from django.shortcuts import render, get_object_or_404
+# products_app/views.py
+
 from django.views.generic import ListView, DetailView
 
 from .models import Category, Product
@@ -14,13 +14,13 @@ def categories(request):
 
 class AllProductsListView(ListView):
     model = Product
-    template_name = 'store/home.html'
+    template_name = 'common/home.html'
     context_object_name = 'products'
 
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'store/products/product_detail.html'
+    template_name = 'products/product_detail.html'
     context_object_name = 'product'
 
     def get_queryset(self):

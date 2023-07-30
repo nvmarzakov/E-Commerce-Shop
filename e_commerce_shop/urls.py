@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('e_commerce_shop.store.urls', namespace='store')),
+    path('', include('e_commerce_shop.products_app.urls', namespace='products_app')),
 ]
 
 if settings.DEBUG:

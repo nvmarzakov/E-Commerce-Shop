@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
 
-from e_commerce_shop.store.models import Category, Product
+from e_commerce_shop.products_app.models import Category, Product
 
 
 class TestCategoriesModel(TestCase):
