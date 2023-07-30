@@ -1,0 +1,10 @@
+<h1>Home page its work!</h1>
+
+{% for product in products %}
+    <li>
+        {{ product.title }}
+        {{ product.description }}
+        {{ product.price }}
+        {{ product.image }}
+    </li>
+{% endfor %}
