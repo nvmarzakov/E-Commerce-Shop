@@ -17,7 +17,7 @@
 
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
-
+            <h2>Our products</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {% for product in products %}
                     <div class="col">
@@ -29,6 +29,7 @@
                                 <text x="45%" y="55%" fill="#eceeef" dy=".2em">{{ product.brand }}</text>
                             </img>
                             <div class="card-body">
+
                                 <p class="card-text">
                                     {# dinamicly take get_absolute_url  #}
                                     <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
