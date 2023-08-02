@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+{% block title %}Home{% endblock %} {# Change dinamically the title #}
+
+{% block content %}
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            {# display category name under the products #}
+            <div class="pb-3 h5">{{ category.name|title }}</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="background-image: url(media/images/body-builder-clip-art-18.jpg); background-repeat: no-repeat">
+            {% if products %}
+                {% for product in products %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    {# dinamicly take get_absolute_url  #}
+                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-body-secondary">BGN {{ product.price }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h1>There is no products</h1>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
