@@ -67,7 +67,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # for every page that we view, we have access to that view the categories view
-                'e_commerce_shop.products_app.views.categories',
+                # This context data make the data available in all of our templates within our project
+                'e_commerce_shop.products_app.context_processor.categories',
             ],
         },
     },
