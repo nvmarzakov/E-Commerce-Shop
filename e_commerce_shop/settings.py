@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # my apps
     'e_commerce_shop.products_app',
+    'e_commerce_shop.basket_app',
 ]
 
 MIDDLEWARE = [
