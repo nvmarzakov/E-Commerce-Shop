@@ -4,6 +4,12 @@ from django.db import models
 from django.urls import reverse
 
 
+class ProductManager(models.Manager):
+    # return a queryset with filter
+    def get_queryset(self):
+        return super(ProductManager, self).get_queryset().filter(is_active=True)
+
+
 class Category(models.Model):
     MAX_LENGTH_CATEGORY = 255
 
@@ -55,8 +61,15 @@ class Product(models.Model):
         blank=True,
     )
 
+    weight = models.PositiveIntegerField(
+        null=True,
+        max_length=4,
+    )
+
     image = models.ImageField(
         upload_to='images/',
+        # if forget to upload image, will show default.png
+        default='images/default.png',
     )
 
     slug = models.SlugField(
@@ -90,6 +103,9 @@ class Product(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True,
     )
+
+    objects = models.Manager()
+    products = ProductManager()
 
     class Meta:
         verbose_name_plural = 'products'
