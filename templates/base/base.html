@@ -80,7 +80,7 @@
             </div>
             <a type="button" role="button" href="{% url "basket_app:basket_summary" %}"
                class="btn btn-outline-secondary">
-                # take total quantity or zero
+                {# take total quantity or zero #}
                 {% with total_qty=basket|length %}
                     <div id="basket-qty" class="d-inline-flex">
                         {% if total_qty > 0 %}
