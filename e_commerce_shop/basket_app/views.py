@@ -7,7 +7,12 @@ from e_commerce_shop.products_app.models import Product
 
 
 def basket_summary(request):
-    return render(request, 'basket/summary.html')
+    basket = Basket(request)
+
+    context = {
+        'basket': basket,
+    }
+    return render(request, 'basket/summary.html', context)
 
 
 def basket_add(request):
