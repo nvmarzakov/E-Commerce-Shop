@@ -6,6 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('e_commerce_shop.products_app.urls', namespace='products_app')),
     path('basket/', include('e_commerce_shop.basket_app.urls', namespace='basket_app')),
+    path('auth/', include('e_commerce_shop.app_auth.urls')),
 ]
 
 if settings.DEBUG:
