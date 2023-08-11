@@ -17,6 +17,8 @@
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../static/css/basket.css">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <style>
         .hero {
             background-image: url('media/images/pexels-photo-949131.jpeg');
@@ -39,6 +41,7 @@
         }
 
     </style>
+
 </head>
 
 <body>
@@ -105,7 +108,7 @@
                     <span class="fs15 fw500">Logout</span>
                 </a>
             {% else %}
-                <a type="button" role="button" href=""
+                <a type="button" role="button" href="{% url 'login_user' %}"
                    class="btn btn-outline-secondary border-0 basket-btn">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -166,7 +169,8 @@
 
         <div class="col mb-3">
             <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="32">
+
                     <use xlink:href="#bootstrap"></use>
                 </svg>
             </a>
