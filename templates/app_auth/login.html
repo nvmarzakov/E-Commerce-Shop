@@ -6,19 +6,18 @@
         <div class="row">
             <div class="col-md-6">
 
-                <form {% url 'register_user' %} method="post" class="register-form">
+                <form action="{% url 'login_user' %}" method="post" class="login-form">
                     {{ form.as_p }}
-
                     <div>
-                        <button class="btn btn-primary">Register</button>
-                        <a href="{% url 'login_user' %}" class="btn btn-secondary">Login</a>
+                        <button class="btn btn-primary">Login</button>
+                        <a href="{% url 'register_user' %}" class="btn btn-secondary">Register</a>
                     </div>
                     {% csrf_token %}
                 </form>
 
             </div>
             <div class="col-md-6 d-none d-md-block">
-                <img src="../../media/images/victor-freitas-WvDYdXDzkhs-unsplash.jpg" alt="bodybuilder" class="img-fluid">
+                <img src="../../media/images/pexels-photo-841131.jpeg" alt="Side Image" class="img-fluid">
             </div>
         </div>
     </div>
