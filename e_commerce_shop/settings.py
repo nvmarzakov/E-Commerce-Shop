@@ -138,3 +138,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = reverse_lazy('products_app:all_products')
 # Default URL to redirect to **login**
 LOGIN_URL = reverse_lazy('login_user')
+
+LOGOUT_REDIRECT_URL = reverse_lazy('logout_user')

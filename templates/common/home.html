@@ -7,11 +7,15 @@
 
     <!-- Hero Section -->
     <header class="hero bg-primary text-white text-center py-3 position-relative">
-
         <div class="col-lg-6 col-md-8 mx-auto">
+            {% if not user.is_authenticated %}
             <h1 class="display-4" style="color: red">Welcome to Nutrition Shop</h1>
             <p class="lead" style="color: deepskyblue">Your one-stop destination for all your nutrition needs.</p>
             <a href="{% url 'register_user' %}" class="btn btn-light btn-lg">Make an account</a>
+            {% else %}
+            <h1 class="display-4" style="color: red">Welcome {{ user.username }}</h1>
+            <p class="lead" style="color: deepskyblue">Your are on your one-stop destination for all your nutrition needs. Have a nice Shopping!</p>
+            {% endif %}
         </div>
     </header>
 

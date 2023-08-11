@@ -35,8 +35,9 @@ class LoginUserView(auth_views.LoginView):
     template_name = 'app_auth/login.html'
 
 
-class LogoutUserView(views.View):
-    pass
+class LogoutUserView(auth_views.LogoutView):
+
+    template_name = 'app_auth/logout.html'
 
 
 UserModel = get_user_model()
