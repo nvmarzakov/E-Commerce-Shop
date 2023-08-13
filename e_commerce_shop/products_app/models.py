@@ -63,7 +63,6 @@ class Product(models.Model):
 
     weight = models.PositiveIntegerField(
         null=True,
-        max_length=4,
     )
 
     image = models.ImageField(
