@@ -140,3 +140,5 @@ LOGIN_REDIRECT_URL = reverse_lazy('products_app:all_products')
 LOGIN_URL = reverse_lazy('login_user')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('logout_user')
+
+# AUTH_USER_MODEL = 'app_auth.AppUser'
