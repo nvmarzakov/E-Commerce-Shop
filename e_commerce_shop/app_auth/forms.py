@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 class RegisterUserForm(auth_forms.UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
         content = forms.BooleanField()
         # email = forms.EmailField()
