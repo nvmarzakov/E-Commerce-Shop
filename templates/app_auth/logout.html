@@ -1,9 +1,15 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>You have successfully logged out!!! </h1>
-
-    <div class="col-md-6 d-none d-md-block">
-                <img src="../../media/images/body-builder-clip-art-18.jpg" alt="bodybuilder" class="img-fluid">
-            </div>
+<div class="container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1>You have successfully logged out!!!</h1>
+        </div>
+        <div class="col-md-6 d-none d-md-block">
+            <img src="{% static 'images/body-builder-clip-art-18.jpg' %}" alt="bodybuilder" class="img-fluid">
+        </div>
+    </div>
+</div>
 {% endblock %}
