@@ -1,0 +1,12 @@
+/* static/css/profile.css */
+
+/* Изравняване на първата буква */
+.form-label {
+    flex: 0 0 150px;
+}
+
+/* Допълнителни стилове за оформление */
+.card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
