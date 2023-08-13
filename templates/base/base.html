@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../../static/css/basket.css">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
     <style>
         .hero {
             background-image: url('media/images/pexels-photo-949131.jpeg');
@@ -95,7 +96,7 @@
                 </div>
             </div>
             {# If user #}
-            {% if user.is_authenticated %}
+            {% if request.user.is_authenticated %}
                 <a type="button" role="button" href="{% url 'logout_user' %}"
                    class="btn btn-outline-secondary border-0 basket-btn">
                     <div>
@@ -106,6 +107,19 @@
                         </svg>
                     </div>
                     <span class="fs15 fw500">Logout</span>
+                </a>
+
+                <a type="button" role="button" href="{% url 'details_user' user.id %}"
+                   class="btn btn-outline-secondary border-0 basket-btn">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                        </svg>
+                    </div>
+                    <span class="fs15 fw500">Account</span>
                 </a>
             {% else %}
                 <a type="button" role="button" href="{% url 'login_user' %}"
@@ -120,17 +134,6 @@
                     <span class="fs15 fw500">Login</span>
                 </a>
             {% endif %}
-            <a type="button" role="button" href=""
-               class="btn btn-outline-secondary border-0 basket-btn">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
-                    </svg>
-                </div>
-                <span class="fs15 fw500">Account</span>
-            </a>
 
             <a type="button" role="button" href="{% url "basket_app:basket_summary" %}"
                class="btn btn-outline-secondary">
@@ -169,7 +172,8 @@
 
         <div class="col mb-3">
             <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="32">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40"
+                     height="32">
 
                     <use xlink:href="#bootstrap"></use>
                 </svg>
