@@ -5,12 +5,17 @@ from django.contrib.auth import forms as auth_forms, login, authenticate, get_us
 from django.contrib.auth import mixins as auth_mixins
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import Http404
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 from e_commerce_shop.app_auth.forms import RegisterUserForm
+
+
+def not_found_view(request):
+    raise Http404("This page does not exist")
 
 
 class RegisterUserView(views.CreateView):
@@ -58,7 +63,7 @@ class UserProfileDetailView(auth_mixins.LoginRequiredMixin, DetailView):
 class UserProfileEditView(auth_mixins.LoginRequiredMixin, views.UpdateView):
     model = UserModel
     template_name = 'app_auth/edit_profile.html'
-    fields = ['email', 'first_name', 'last_name']
+    fields = ['email', 'first_name', 'last_name', ]
 
     def get_success_url(self):
         return reverse_lazy('details_user', kwargs={'pk': self.object.pk})

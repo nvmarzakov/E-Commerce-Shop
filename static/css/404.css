@@ -1,0 +1,20 @@
+.hero {
+    background-image: url('static/images/404-error-page-not-found.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.hero h1,
+.hero p,
+.hero a {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
