@@ -18,34 +18,40 @@
                     <div class="border">
                         <div class="col border-bottom">
                             <div class="row p-3">
-                                {% if product.slug == 'Proteins' %}
-                                <div class="col-6">Weight: {{ product.weight }} grams</div>
-                                {% elif product.slug == 'Vitamins' %}
-                                <div class="col-6">Caps: {{ product.weight }} </div>
+                                {% if product.slug == 'Proteins' or product.slug == 'Creatins' %}
+                                    <div class="col-6">Weight: {{ product.weight }} grams</div>
+                                {% elif product.slug == 'Vitamins' or product.slug == 'Fatburns' or product.slug == 'Amino' or product.slug == 'Glutamine' %}
+                                    <div class="col-6">Caps: {{ product.weight }} </div>
                                 {% endif %}
                                 <div class="col-6 text-end"><span class="h4 fw-bold">BGN {{ product.price }}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="row p-3">
-                                <div class="col-6">
-                                    <label for="select">Qty</label>
-                                    <select id="select">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                    </select>
+                        {% if request.user.is_authenticated %}
+                            <div class="col">
+                                <div class="row p-3">
+                                    <div class="col-6">
+                                        <label for="select">Qty</label>
+                                        <select id="select">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
 
-                                </div>
-                                <div class="col-6 text-end">
-                                    <button type="button" id="add-button" value="{{ product.id }}"
-                                            class="btn btn-secondary btn-sm">Add to basket
-                                    </button>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <button type="button" id="add-button" value="{{ product.id }}"
+                                                class="btn btn-secondary btn-sm">Add to basket
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        {% else %}
+                            <div class="col">
+                                <h5>If you want to buy this product , you have to login!</h5>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -68,7 +74,8 @@
                 success: function (json) {
                     document.getElementById("basket-qty").innerHTML = json.qty
                 },
-                error: function (xhr, errmsg, err) {}
+                error: function (xhr, errmsg, err) {
+                }
             });
         })
     </script>
