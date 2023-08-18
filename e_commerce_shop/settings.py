@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my apps
+    'e_commerce_shop.common_app',
     'e_commerce_shop.products_app',
     'e_commerce_shop.basket_app',
     'e_commerce_shop.app_auth',
