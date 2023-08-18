@@ -7,6 +7,7 @@ urlpatterns = [
     path('', include('e_commerce_shop.products_app.urls', namespace='products_app')),
     path('basket/', include('e_commerce_shop.basket_app.urls', namespace='basket_app')),
     path('auth/', include('e_commerce_shop.app_auth.urls')),
+    path('about/', include('e_commerce_shop.common_app.urls', namespace='common_app')),
 ]
 
 if settings.DEBUG:
