@@ -1,2 +1,11 @@
+#contact-form label {
+    color: blue;
+    width: 100px;
+}
 
+#contact-form input{
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+}
 
